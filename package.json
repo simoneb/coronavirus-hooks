@@ -1,0 +1,65 @@
+{
+  "name": "coronavirus-hooks",
+  "version": "1.0.0",
+  "description": "coronavirus-hooks",
+  "keywords": [
+    "coronavirus",
+    "react",
+    "hooks"
+  ],
+  "license": "MIT",
+  "author": "Simone Busoli <simone.busoli@gmail.com>",
+  "homepage": "https://github.com/simoneb/coronavirus-hooks",
+  "repository": "simoneb/coronavirus-hooks",
+  "bugs": "https://github.com/simoneb/coronavirus-hooks/issues",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "cjs/",
+    "es/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rimraf cjs es",
+    "lint": "eslint src",
+    "prepare": "npm run clean && npm run build",
+    "prepublishOnly": "npm run build",
+    "release": "standard-version"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0-0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@rollup/plugin-image": "2.0.4",
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "husky": "4.2.5",
+    "lint-staged": "10.1.3",
+    "prettier": "2.0.4",
+    "react": "16.13.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.6.1",
+    "standard-version": "7.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "post-merge": "npm i"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,md}": [
+      "eslint --fix"
+    ]
+  }
+}
