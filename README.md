@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/coronavirus-hooks.svg)](https://badge.fury.io/js/coronavirus-hooks)
 [![bundlephobia](https://badgen.net/bundlephobia/minzip/coronavirus-hooks)](https://bundlephobia.com/result?p=coronavirus-hooks)
 
-Coronavirus React Hook
+😷 Coronavirus React Hooks
 
 ## Usage
 
@@ -19,6 +19,10 @@ function App() {
   return <div>we're screwed</div>
 }
 ```
+
+## Example
+
+[![Edit useCoronavirus](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/usecoronavirus-kr84j?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Credits
 
