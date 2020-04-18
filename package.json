@@ -14,7 +14,6 @@
   "bugs": "https://github.com/simoneb/coronavirus-hooks/issues",
   "main": "cjs/index.js",
   "module": "es/index.js",
-  "types": "src/index.d.ts",
   "files": [
     "cjs/",
     "es/",

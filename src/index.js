@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 import virus from './covid-virus.png'
 
@@ -24,7 +24,11 @@ const createElements = (count, size) =>
     return i
   })
 
-function animate(e, size) {
+function animate(e, size, mountedRef) {
+  if (!mountedRef.current) {
+    return
+  }
+
   const nextDuration = Math.random() * 4 + 2
 
   e.style.transitionTimingFunction =
@@ -33,10 +37,10 @@ function animate(e, size) {
   e.style.opacity = Math.random()
   translate(e, size)
 
-  setTimeout(animate, nextDuration * 1000, e, size)
+  setTimeout(animate, nextDuration * 1000, e, size, mountedRef)
 }
 
-const createContainer = (count, size) => {
+const createContainer = (count, size, mountedRef) => {
   const div = document.createElement('div')
   div.style.position = 'absolute'
   div.style.top = 0
@@ -49,7 +53,7 @@ const createContainer = (count, size) => {
 
   div.append(...elements)
   document.body.append(div)
-  elements.forEach(e => animate(e, size))
+  elements.forEach(e => animate(e, size, mountedRef))
 
   return div
 }
@@ -60,9 +64,15 @@ export default function useCoronavirus({
   count = DEFAULTS.count,
   size = DEFAULTS.size
 } = DEFAULTS) {
-  useEffect(() => {
-    const container = createContainer(count, size)
+  const mountedRef = useRef(false)
 
-    return () => container.remove()
+  useEffect(() => {
+    mountedRef.current = true
+    const container = createContainer(count, size, mountedRef)
+
+    return () => {
+      mountedRef.current = false
+      container.remove()
+    }
   }, [count, size])
 }
