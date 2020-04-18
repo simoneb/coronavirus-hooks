@@ -6,6 +6,20 @@
 
 Coronavirus React Hook
 
+## Usage
+
+- `npm install coronavirus-hooks`
+
+```js
+import useCoronavirus from 'coronavirus-hooks'
+
+function App() {
+  useCoronavirus()
+
+  return <div>we're screwed</div>
+}
+```
+
 ## Credits
 
 `coronavirus-hooks` is heavily inspired by [axios-hooks](https://github.com/simoneb/axios-hooks)
