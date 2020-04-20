@@ -10,7 +10,7 @@
 
 - `npm install coronavirus-hooks`
 
-```js
+```jsx
 import useCoronavirus from 'coronavirus-hooks'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 
 ## Example
 
-[![Edit useCoronavirus](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/usecoronavirus-kr84j?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit coronavirus-hooks](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/simoneb/coronavirus-hooks-example/tree/master/?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Credits
 
