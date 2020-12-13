@@ -46,7 +46,7 @@
     "prettier": "2.2.1",
     "react": "17.0.1",
     "rimraf": "3.0.2",
-    "rollup": "2.33.3",
+    "rollup": "2.34.2",
     "standard-version": "9.0.0"
   },
   "husky": {
