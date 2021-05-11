@@ -47,7 +47,7 @@
     "react": "17.0.2",
     "rimraf": "3.0.2",
     "rollup": "2.47.0",
-    "standard-version": "9.2.0"
+    "standard-version": "9.3.0"
   },
   "husky": {
     "hooks": {
